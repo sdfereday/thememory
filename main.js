@@ -153,7 +153,6 @@ require(['chance', 'ramda'], function (Chance, Ramda) {
 
       // Resets everything and starts again 
       if (selectedShapeType !== correctShapeType) {
-        console.log("Incorrect.");
 
         this.score.innerHTML = "";
         this.currentShapeIndex = 0;
@@ -174,8 +173,6 @@ require(['chance', 'ramda'], function (Chance, Ramda) {
 
       } else {
 
-        console.log("Right so far!");
-
         // Move to the next one
         this.currentShapeIndex += 1;
 
@@ -183,8 +180,6 @@ require(['chance', 'ramda'], function (Chance, Ramda) {
 
       // Made it through all of them correctly
       if (this.currentShapeIndex > this.memoryQueue.length - 1) {
-
-        console.log("All Correct!");
 
         this.score.innerHTML = "";
         for(var i = 0; i < this.level; i++) {
@@ -202,7 +197,6 @@ require(['chance', 'ramda'], function (Chance, Ramda) {
         this.mainShape.className = "blank bounce";
 
         // And one last time out to start the next queue. :P
-        console.log("Get ready!");
         setTimeout(function(){
         
             self.shapeContainer.className = "";
@@ -255,8 +249,6 @@ require(['chance', 'ramda'], function (Chance, Ramda) {
         });
         this.memoryQueue.push(this.combos[randInt]);
       }
-
-      console.log("Made a new memory queue:", this.memoryQueue);
 
       if (this.memoryQueue.length > 0) {
         this.mainShape.innerHTML = "^ - ^";
